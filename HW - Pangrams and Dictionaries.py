@@ -1,16 +1,30 @@
-# #Pangram Numbers
+#Pangram Numbers
 userInput = input()
 
-numbers = {}
+numbers = {'1': 0,
+           '2': 0,
+           '3': 0,
+           '4': 0,
+           '5': 0,
+           '6': 0,
+           '7': 0,
+           '8': 0,
+           '9': 0,
+           '0': 0}
 
-numberList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+isPangram = True
 
 for i in userInput:
-    if i in numberList:
-        if i in numbers:
-           numbers[i] += 1
-        else:
-            numbers[i] = 1
+    numbers[i] += 1
+for j in numbers:
+    if numbers[j] < 1:
+        isPangram = False
+
+if isPangram == True:
+    print('It is a number Pangram')
+else:
+    print('It is not a number Pangram')
+
 print(numbers) 
 
 #Merging Dictionaries
